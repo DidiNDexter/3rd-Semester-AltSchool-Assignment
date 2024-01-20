@@ -13,10 +13,10 @@ module "networking" {
 module "compute" {
   source          = "./modules/compute"
   enviroment      = "prod"
-  public_key_path = "~/.ssh/space_key.pub"
+  public_key_path = "~/.ssh/didi_key.pub"
   volume_size     = "20"
   public_subnet   = module.networking.test_public_subnet
   public_sg       = module.networking.allow_all
-  key_name        = "space_key"
+  key_name        = "didi_key"
   instance_type   = "t2.micro"
 }

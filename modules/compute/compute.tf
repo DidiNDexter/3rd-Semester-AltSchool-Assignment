@@ -13,10 +13,9 @@ output "amiId" {
 }
 
 resource "aws_instance" "test_instance" {
-  ami               = data.aws_ami.server_ami.id
-  instance_type     = var.instance_type
-  availability_zone = "eu-west-2a"
-  key_name          = aws_key_pair.test_key.id
+  ami           = data.aws_ami.server_ami.id
+  instance_type = var.instance_type
+  key_name      = aws_key_pair.test_key.id
 
   root_block_device {
     volume_size = var.volume_size
